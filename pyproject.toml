@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "njust-campus-login"
+version = "0.1.0"
+description = "CLI auto-login helper for the NJUST campus network portal."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "AutomaticCampusNetworkLogin contributors" }]
+dependencies = ["requests>=2.28"]
+keywords = ["njust", "campus-network", "cli", "auto-login"]
+
+[project.scripts]
+njust-campus-login = "njust_campus_login.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

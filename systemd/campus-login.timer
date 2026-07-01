@@ -1,0 +1,10 @@
+[Unit]
+Description=Run NJUST campus login periodically
+
+[Timer]
+OnBootSec=30
+OnUnitActiveSec=5min
+Unit=campus-login.service
+
+[Install]
+WantedBy=timers.target

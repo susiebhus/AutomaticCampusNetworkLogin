@@ -1,0 +1,13 @@
+[Unit]
+Description=NJUST campus network auto login
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/campus-login.env
+WorkingDirectory=/opt/njust-campus-login
+ExecStart=/usr/bin/python3 -m njust_campus_login --skip-if-online --retries 3 --retry-delay 8 --verify-after-login
+
+[Install]
+WantedBy=multi-user.target
